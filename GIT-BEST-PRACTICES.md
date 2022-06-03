@@ -1,3 +1,10 @@
+# The basics
+## Checkout new branch
+`$ git checkout -b [branch_name]`
+
+## Push branch to remote repo (aka origin) / create a PR
+`$ git push origin [branch_name]`
+
 # Checkout old commit and make it a new commit
 ## Why would I want to do this?
 You suspect some recent commits may have introduced a bug and want the repo to revert to the state it was in prior to those commits. In other words, if you commit history looks like:
