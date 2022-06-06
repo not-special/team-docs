@@ -4,9 +4,9 @@ System Design Overview
 * **Horizontal Scaling** - Add more ‘commodity hardware’ nodes to system. Nodes group handles increased
 load.
 * **CAP Theorem** - Consistency, Availability, Partition Tolerance. You can only have two at once. BUT since
-there WILL be network partitions, really only can choose Consistency OR Availability
+there WILL be network partitions, really only can choose on spectrum of Consistency vs Availability
 * **ERD** - Entity Relationship Diagram. Used to demo organization of relationships in a database
-* **QPS** - Queries Per Second, usually related to database metrics
+* **QPS** - Queries Per Second, usually related to database metrics. SQL DBs typically can handle ~1,000QPS
 * **ACID** - Atomicity, Consistency, Isolation, Durability. ACID databases assoc. w/ RDBMS (SQL, Postgres, etc.)
 * **SQL DBs** - (MySQL, SQLite, Postgres, etc.) Prefer Consistency over Availability, good for more highly
 interrelated data, but slower/lower Read/Write QPS. Associated with Strong Consistency.
@@ -29,8 +29,7 @@ possible and keep re-sharding impact on moving data to a minimum.
 * **Websockets** - Connection for fully bi-directional data transfer between two endpoints
 * **Load Balancer** - Sits in front of a group of nodes to evenly distribute traffic between nodes. Multiple routing
 strategies: Round Robin (or Weighted), Least Connections, Hash, etc.
-* **CDN** - Content Delivery Network. Good for static data and larger files. Purpose is to improve performance by
-storing data physically closer to the client, thus reducing response time.
+* **CDN** - Content Delivery Network. Good for static data and larger files. Purpose is to improve performance by storing data physically closer to the client; reducing response time. Also deflects traffic from hitting the system
 * **Background Jobs** - Job given a task to run asynchronously, thus speed client response time.
 * **CRON Job** - Background job that runs on a time-schedule (“chronological” job)
 * **Consensus** - Process (and assoc. problems) of deciding on a new leader node, if lead node fails (Paxos,
@@ -47,3 +46,4 @@ needed). Loosely coupled. More complex. Usually associated w/ HTTP req/res.
 * **Two main components:** sidecars(proxy instances per service), and “control plane” to coord all sidecars
 * **Kafka** - dist. data streaming tech. Can publish, sub to, store, and process streams of records
 * **Materialize.io** - Service to keep results of complex queries highly available by incrementally updating them
+* **ORM** - Object Relational Mapping is a technique that creates a translation layer between Object-Oriented Programming and relational databases. (frameworks: ActiveRecords, Hibernate)
