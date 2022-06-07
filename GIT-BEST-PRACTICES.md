@@ -5,6 +5,32 @@
 ### Push branch to remote repo (aka origin) / create a PR
 `$ git push origin [branch_name]`
 
+# Checkout a remote branch
+### Why would I want to do this?
+Someone on the team pushes a branch to the remote shared repo with `$ git push origin [branch_name]` and you want to pull that branch onto your local machine
+
+### How do I do it (Git version > 2.23)?
+1) Start by fetching from the remote repo (including branches): 
+```bash
+$ git fetch
+``` 
+2) [Optional] List the branches available for checkout:
+```bash
+$ git branch -v -a
+```
+3) Checkout a remote branch
+```bash
+$ git switch [branch_name]
+```
+
+### How do I do it with an older version of Git? 
+1) Checkout the remote branch
+```bash
+$ git checkout [branch_name]
+```
+
+* [StackOverflow link](https://stackoverflow.com/questions/1783405/how-do-i-check-out-a-remote-git-branch)
+
 
 # Checkout old commit and make it a new commit
 ### Why would I want to do this?
