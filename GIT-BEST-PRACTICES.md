@@ -56,3 +56,26 @@ $ git commit -m "[message]"
 
 * [StackOverflow link](https://stackoverflow.com/questions/3380805/checkout-old-commit-and-make-it-a-new-commit)
 * Git SHA (simple hashing algorithm): it's the alpha numeric code that identifies a commit. Run `git log` or `git log --oneline` from within a repo you've worked on to see
+
+# Reversing Changes
+## Accidental Commit
+### What would I want to do this?
+You want to undo JUST the last commit for whatever reason
+- Realized after the commit that you were on the wrong branch.
+- Realized that you accidentally added some incorrect files
+
+### Show me the money! What are the git commands?
+```bash
+$ git reset --soft HEAD~1
+```
+This will "uncommit" the most resent commit, but it WILL preserve all of the changes within your files still. BUT it will leave git with all of the those files in the staging area still. Read on to unstage files.
+
+## Unstage ALL staged files in git
+### What would I want to do this?
+You are undoing an accidental commit, or you want to remove all staged files and start again
+- Realized that you accidentally added some incorrect files
+
+### Show me the money! What are the git commands?
+```bash
+$ git reset
+```
