@@ -79,3 +79,32 @@ You are undoing an accidental commit, or you want to remove all staged files and
 ```bash
 $ git reset
 ```
+
+# Incorporate new changes to `main` into your feature branch
+### Why would I want to do this?
+You pull main, checkout a feature branch and start developing. Meanwhile, someone else on your team does the same thing, makes a smaller change, posts a PR, has it approved, and merges it with main. The result: the main branch that your feature branch is tracking is now out of date! Your branch may even contains conflicts with the new `main` :| 
+
+### How do I do it?
+1) Switch from your feature branch (e.g. `new-get-route`) to `main`
+```bash
+$ git checkout main
+```
+
+2) Pull the latest changes to `main` from the remote repo
+```bash
+$ git pull 
+```
+
+3) Switch back to your feature branch 
+```bash
+$ git checkout <feature-branch-name>
+``` 
+
+4) Rebase with `main` (**WARNING**: Rebase can be a destructive operation. Be careful!)
+```bash
+$ git rebase main
+```
+
+5) Resolve any merge conflicts (git will give you helpful hints for how to do this)
+
+6) Keep developing now knowing that your branch reflects the most recent changes that your eager teammate has added to `main` :) 
